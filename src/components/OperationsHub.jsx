@@ -1178,11 +1178,11 @@ function PasswordForge({ triggerToast }) {
 // ----------------------------------------------------
 function PingLatency({ triggerToast }) {
   const [testing, setTesting] = useState(false);
-  const [pings, setPings] = useState({ edge: 0, google: 0, srv: 0 });
+  const [pings, setPings] = useState({ edge: 0, google: 0 });
 
   const runTest = () => {
     setTesting(true);
-    setPings({ edge: 0, google: 0, srv: 0 });
+    setPings({ edge: 0, google: 0 });
     playSynthBeep(650, 'sine', 0.05);
 
     setTimeout(() => {
@@ -1192,15 +1192,10 @@ function PingLatency({ triggerToast }) {
 
     setTimeout(() => {
       setPings((prev) => ({ ...prev, google: 24 }));
-      playSynthBeep(880, 'sine', 0.05);
-    }, 1600);
-
-    setTimeout(() => {
-      setPings((prev) => ({ ...prev, srv: 4 }));
       playSynthBeep(980, 'sine', 0.15);
       setTesting(false);
       triggerToast?.("EDGE LATENCY AUDIT SWEEP COMPLETED // NETWORK NOMINAL", "cmd");
-    }, 2400);
+    }, 1600);
   };
 
   return (
@@ -1215,8 +1210,7 @@ function PingLatency({ triggerToast }) {
         <div className="flex flex-col gap-3">
           {[
             { label: 'cloudflare-dns.net (EDGE_ROUTER)', value: pings.edge },
-            { label: 'google-cdn.com (PUBLIC_SERVR)', value: pings.google },
-            { label: 'accoona-node01.net (LOCAL_CLUSTER)', value: pings.srv }
+            { label: 'google-cdn.com (PUBLIC_SERVR)', value: pings.google }
           ].map((n, idx) => (
             <div 
               key={idx}
