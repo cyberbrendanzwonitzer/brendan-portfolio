@@ -97,54 +97,54 @@ export default function TelemetryMatrix() {
   ];
 
   return (
-    <section className="px-6 py-6 max-w-7xl mx-auto">
+    <section className="px-6 py-6 max-w-7xl mx-auto relative">
+      {/* Glowing Background Sine Wave Infrastructure Vector Chart */}
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.08] px-12 py-16">
+        <svg className="w-full h-full" viewBox="0 0 1000 280" preserveAspectRatio="none">
+          {/* Horizontal Grid lines */}
+          <line x1="0" y1="70" x2="1000" y2="70" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
+          <line x1="0" y1="140" x2="1000" y2="140" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
+          <line x1="0" y1="210" x2="1000" y2="210" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
+          
+          <defs>
+            <linearGradient id="wave-gradient-white" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.12" />
+              <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
+          {/* The white translucent wave fill */}
+          <path 
+            d="M 0,220 Q 180,90 350,170 T 700,110 T 850,200 T 1000,140 L 1000,280 L 0,280 Z" 
+            fill="url(#wave-gradient-white)"
+          />
+          {/* Main white wave path */}
+          <path 
+            d="M 0,220 Q 180,90 350,170 T 700,110 T 850,200 T 1000,140" 
+            fill="none" 
+            stroke="#FFFFFF" 
+            strokeWidth="2.0"
+            className="drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+            strokeLinecap="round"
+          />
+          {/* Secondary thin gray path */}
+          <path 
+            d="M 0,200 Q 180,110 350,190 T 700,130 T 850,220 T 1000,160" 
+            fill="none" 
+            stroke="#A1A1AA" 
+            strokeWidth="0.75"
+            strokeDasharray="4,4"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
       {/* Unified Executive Dashboard Container */}
       <motion.div 
-        className="border border-white/5 bg-white/[0.01] backdrop-blur-2xl rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl select-none"
+        className="border border-white/5 bg-white/[0.01] backdrop-blur-2xl rounded-2xl p-6 md:p-10 relative overflow-hidden shadow-2xl select-none z-10"
         initial={{ opacity: 0, filter: "blur(15px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.0, ease: "easeOut" }}
       >
-        
-        {/* Glowing Background Sine Wave Infrastructure Vector Chart */}
-        <div className="absolute inset-0 pointer-events-none -z-10 opacity-[0.08]">
-          <svg className="w-full h-full" viewBox="0 0 1000 280" preserveAspectRatio="none">
-            {/* Horizontal Grid lines */}
-            <line x1="0" y1="70" x2="1000" y2="70" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
-            <line x1="0" y1="140" x2="1000" y2="140" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
-            <line x1="0" y1="210" x2="1000" y2="210" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
-            
-            <defs>
-              <linearGradient id="wave-gradient-white" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.12" />
-                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
-              </linearGradient>
-            </defs>
-            {/* The white translucent wave fill */}
-            <path 
-              d="M 0,220 Q 180,90 350,170 T 700,110 T 850,200 T 1000,140 L 1000,280 L 0,280 Z" 
-              fill="url(#wave-gradient-white)"
-            />
-            {/* Main white wave path */}
-            <path 
-              d="M 0,220 Q 180,90 350,170 T 700,110 T 850,200 T 1000,140" 
-              fill="none" 
-              stroke="#FFFFFF" 
-              strokeWidth="2.0"
-              className="drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
-              strokeLinecap="round"
-            />
-            {/* Secondary thin gray path */}
-            <path 
-              d="M 0,200 Q 180,110 350,190 T 700,130 T 850,220 T 1000,160" 
-              fill="none" 
-              stroke="#A1A1AA" 
-              strokeWidth="0.75"
-              strokeDasharray="4,4"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
 
         {/* Section Header */}
         <div className="relative z-10 flex flex-col mb-10 text-left">
