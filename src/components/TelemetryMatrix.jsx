@@ -107,7 +107,7 @@ export default function TelemetryMatrix() {
       >
         
         {/* Glowing Background Sine Wave Infrastructure Vector Chart */}
-        <div className="absolute inset-0 pointer-events-none opacity-25">
+        <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.08]">
           <svg className="w-full h-full" viewBox="0 0 1000 280" preserveAspectRatio="none">
             {/* Horizontal Grid lines */}
             <line x1="0" y1="70" x2="1000" y2="70" stroke="#27272A" strokeWidth="0.5" strokeDasharray="3,3" />
