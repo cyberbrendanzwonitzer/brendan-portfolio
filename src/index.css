@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0A0A0B;
+    color: #E4E4E7;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar Aesthetics */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272A;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+
+  /* Scanlines and Grid Backgrounds */
+  .grid-telemetry {
+    background-image: 
+      linear-gradient(to right, rgba(39, 39, 42, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39, 39, 42, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .grid-telemetry-dense {
+    background-image: 
+      linear-gradient(to right, rgba(39, 39, 42, 0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39, 39, 42, 0.25) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom, rgba(39, 39, 42, 0.8), rgba(39, 39, 42, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.3s ease;
+  }
+
+  .glow-border:hover::after {
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.2));
+  }
+
+  /* CRT Terminal Screen Vignette */
+  .vignette-crt {
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(59, 130, 246, 0.05);
+    pointer-events: none;
+  }
+
+  /* Dot Grid Overlay */
+  .dot-grid {
+    background-image: radial-gradient(rgba(39, 39, 42, 0.4) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+
+  /* Custom Safe Area padding */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
+
+/* Touch Device Custom Cursor Suppression */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  
+  /* Disable hover states that stick on mobile tap */
+  .hover-trigger:hover {
+    transform: none !important;
+    background-color: inherit !important;
+  }
+}
+
+/* ========================================================
+   CRT Scanline Emulation & Phosphor Monitor Glow (Asset #11)
+   ======================================================== */
+
+.crt-scanline-active {
+  /* CRT Symmetrical Grid & RGB Phosphor Mask overlay */
+  &::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: 
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.05));
+    z-index: 99999;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+  }
+
+  /* Scrolling CRT Phosphor beam sweep */
+  &::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      rgba(59, 130, 246, 0) 0%, 
+      rgba(59, 130, 246, 0.05) 10%, 
+      rgba(59, 130, 246, 0) 10%
+    );
+    z-index: 99998;
+    pointer-events: none;
+    animation: crt-scanline-sweep 6s linear infinite;
+  }
+
+  /* Text glowing phosphor highlights & scanline flicker */
+  body {
+    animation: crt-phosphor-flicker 0.15s infinite;
+    filter: saturate(1.25) contrast(1.15) brightness(1.05);
+    text-shadow: 0 0 2px rgba(59, 130, 246, 0.45);
+  }
+}
+
+/* CRT Emulation Animation Keyframes */
+@keyframes crt-scanline-sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes crt-phosphor-flicker {
+  0% { opacity: 0.994; }
+  50% { opacity: 1; }
+  100% { opacity: 0.994; }
+}
+
+/* ========================================================
+   Matrix Binary Rain Active State Transitions (Asset #14)
+   ======================================================== */
+
+.ambient-glow, .grid-telemetry, canvas:not(.fixed) {
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.matrix-rain-active {
+  .ambient-glow,
+  .grid-telemetry,
+  canvas:not(.fixed) {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+}
+
+

@@ -1,0 +1,67 @@
+BRENDAN ZWONITZER
+IT Support Specialist & Systems Administrator | Endpoint Security | Microsoft 365 | Network Infrastructure
+Fort Worth, TX Area | 801-541-7131 | Cyberbrendanzwonitzer@gmail.com
+LinkedIn: https://www.linkedin.com/in/brendan-zwonitzer-481000258/
+
+=========================================
+PROFESSIONAL SUMMARY
+=========================================
+Analytical IT Support Specialist and Systems Administrator with hands-on experience supporting multi-tenant MSP environments, endpoint operations, identity management, and network infrastructure. Skilled across Microsoft 365, Entra ID, Intune, Active Directory, Cisco Meraki, UniFi, SentinelOne, and SaaS security platforms. Known for technical ownership, clear documentation, client rapport, and automation-minded troubleshooting.
+
+=========================================
+TECHNICAL SKILLS
+=========================================
+- Identity & Endpoint Management: Microsoft 365, Microsoft Intune, Microsoft Entra ID, Active Directory Domain Services, Conditional Access, user lifecycle administration
+- Security & Compliance: SentinelOne, SaaS Alerts, endpoint isolation, account remediation, compliance auditing, data sanitization/masking, post-incident user awareness
+- Networking & Cloud: Cisco Meraki, Ubiquiti UniFi, Cloudflare DNS, edge hosting, application delivery, remote branch infrastructure support
+- Operating Systems: Windows 10/11, macOS, Linux
+- Automation & Emerging Tech: Generative AI workflows, Ollama, RAG database architecture, prompt engineering, full-stack web development, closed-loop log debugging
+- Core Strengths: Multi-tenant MSP support, technical project management, hardware provisioning, KB authoring, client rapport, escalation ownership
+
+=========================================
+PROFESSIONAL EXPERIENCE
+=========================================
+
+ACCOONA | Dallas, TX | December 2024 - Present
+Desktop Support Technician & Systems Administrator
+- Support 35+ multi-tenant client environments ranging from 20 to 400+ endpoints, serving as a primary escalation point for endpoint, identity, network, and security issues without a dedicated L2 support path.
+- Configure site infrastructure rollouts using Cisco Meraki and Ubiquiti UniFi to build stable logical and physical network environments for remote branches and client offices.
+- Administer user lifecycles, access provisioning, and identity changes through Active Directory and Microsoft Entra ID while supporting Conditional Access policies and security controls.
+- Isolate compromised endpoints and user accounts using SentinelOne and SaaS Alerts, then coordinate remediation, re-imaging, account recovery, and post-incident user security awareness.
+- Support Windows 11 migration readiness across client endpoints by auditing device compliance, patch status, asset inventory, and endpoint readiness requirements.
+- Reduced repeat troubleshooting and accelerated team resolution times by building an internal knowledge base with standardized fixes, escalation notes, and client-specific support procedures.
+
+UNISYS | Dallas, TX | September 2023 - December 2024
+Services Support Rep 2
+- Resolved 40 to 50 hardware, software, and network tickets daily in a high-volume enterprise queue while maintaining strict SLA expectations.
+- Restored user productivity during cascading endpoint deployment failures involving BitLocker recovery, OneDrive sync issues, Outlook profile corruption, and Microsoft Intune compliance mismatches.
+- Onboarded and trained 14+ technical new hires while acting as an informal escalation resource for troubleshooting workflow, ticket handling, and desk performance.
+- Troubleshot multi-system access, device, application, and network disruptions for enterprise users to maintain business continuity and operational uptime.
+
+INVESTMENT REALTY ADVISORS | Midvale, UT | October 2022 - September 2023
+Maintenance Operations Supervisor
+- Coordinated service operations, asset tracking, vendor dispatch, and workflow prioritization across a portfolio of 90+ properties.
+- Coordinated ticket-style Propertyware work order queues, vendor dispatch, and service follow-up to maintain operational continuity across 90+ properties.
+
+=========================================
+TECHNICAL PROJECTS
+=========================================
+
+Local Autonomous AI Agent Pipelines (Ollama & RAG) | Personal Sandbox
+- Built offline, data-secure LLM workflows using Ollama and RAG architecture to test private AI assistants, secure document retrieval, and automation use cases within a controlled local infrastructure environment.
+- Developed internal-style web interfaces for autonomous agents to evaluate scheduling, inventory tracking, health analytics, and controlled web-browsing workflows as infrastructure automation concepts.
+
+Full-Stack Web Development & Commercial Platforms | Production Environments
+- Designed, deployed, and maintained production web environments, including mtwellness.us and wellscleaningwell.com, with emphasis on uptime, DNS management, and operational reliability.
+- Managed Cloudflare DNS, edge routing, web performance, and application delivery configurations to support secure and reliable business web operations.
+- Architected a custom POS and business management workflow for cold-snap-cryo.us to support client onboarding, sales tracking, and operational reporting through centralized business tooling.
+
+Enterprise Homelab Network Environment | Private Sandbox
+- Maintain a private lab with a dedicated Linux server and isolated network stack for testing scripts, multi-tenant configurations, and localized AI model performance.
+
+=========================================
+CERTIFICATIONS
+=========================================
+- CompTIA A+ [Status: VERIFIED 🟢]
+- CompTIA Network+ [Status: IN PROGRESS 🔄]
+- CompTIA Security+ [Status: IN PROGRESS 🔄]
