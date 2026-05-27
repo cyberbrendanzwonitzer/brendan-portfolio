@@ -85,6 +85,14 @@ export default function TelemetryMatrix() {
       sublabel: "Deployed",
       desc: "Cloudflare & RAG apps",
       sparkline: "M 0 15 Q 15 15 22 2 T 35 18 T 48 2 Q 55 15 60 15"
+    },
+    {
+      id: "csat",
+      value: "97%",
+      label: "Customer Satisfaction",
+      sublabel: "SLA CSAT Score",
+      desc: "End-user support audits",
+      sparkline: "M 0 18 Q 15 2 30 14 T 60 2"
     }
   ];
 
@@ -146,7 +154,7 @@ export default function TelemetryMatrix() {
         </div>
 
         {/* 5-Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 relative z-10">
           {metrics.map((m, idx) => (
             <motion.div 
               key={m.id}
